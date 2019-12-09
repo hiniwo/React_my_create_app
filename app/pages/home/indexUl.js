@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {Input  , Button} from 'antd';
 import store from '../../store/index'
-import 'antd/dist/antd.css'
-import './index.css'
+// import 'antd/dist/antd.css'
+// import './index.css'
 import './ui.scss'
 class IndexUI extends Component {
     constructor(props){
@@ -20,7 +20,7 @@ class IndexUI extends Component {
     render() { 
         return ( 
             <div>
-                <h1 className='hh-green' onClick={this.props.clickBtn}>{this.props.inputValue}</h1>
+                <h1 styleName='hh-green' onClick={this.props.clickBtn}>{this.props.inputValue}</h1>
                 <button type='button' onClick={() => {this.props.addList()}}>{this.state.inputValue}</button>
                 <Button onClick={this.confirmEvent.bind(this)}>确定</Button>
                 <Input 

@@ -3,5 +3,7 @@
         "corejs": 3,
         "useBuiltIns": "usage"
       }] , "@babel/preset-react"],
-    "plugins": ["@babel/plugin-transform-runtime" , "react-hot-loader/babel"]
+    "plugins": ["@babel/plugin-transform-runtime" , "react-hot-loader/babel" ,  ["react-css-modules", {
+      "autoResolveMultipleImports" : true
+    }]]
 }

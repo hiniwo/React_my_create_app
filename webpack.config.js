@@ -71,7 +71,23 @@ module.exports = {
           test: /\.js|jsx$/,
           exclude: /node_modules/,
           use: {
-            loader: 'babel-loader'
+            loader: 'babel-loader',
+            options : {
+              plugins: [
+                [
+                  'react-css-modules',
+                  {
+                    generateScopedName: '[local]-[hash:base64:10]',
+                    autoResolveMultipleImports : true,
+                    filetypes: {
+                      '.scss': {
+                        syntax: 'postcss-scss'
+                      }
+                    }
+                  }
+                ]
+              ]
+            }
           }
         },
         {
@@ -100,7 +116,16 @@ module.exports = {
         },
         {
           test: /\.(sass|scss)$/,
-          use: ['style-loader','css-loader','sass-loader' , 'postcss-loader'],
+          use: ['style-loader', {
+            loader: 'css-loader',
+            options: {
+              // module: true,
+              modules: {
+                localIdentName: '[local]-[hash:base64:10]'
+              }
+              // localIdentName: '[local]-[hash:base64:10]'
+            }
+          },'sass-loader' , 'postcss-loader'],
         }
       ]
     },
