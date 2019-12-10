@@ -3,15 +3,11 @@ import React, { Component } from 'react';
 import IndexUi from './indexUl'
 import OtherHome from './otherhome'
 import store from '../../store/index'
+import './ui.scss'
 
 class Home extends Component {
     constructor(props) {
         super(props);
-        // this.state = { 
-        //     inputValue : '我是你爸爸',
-        //     list : [1 , 2 , 3]
-        //  }
-
          this.state=store.getState();
     }
     componentWillMount(){

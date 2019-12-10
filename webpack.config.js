@@ -125,7 +125,14 @@ module.exports = {
               }
               // localIdentName: '[local]-[hash:base64:10]'
             }
-          },'sass-loader' , 'postcss-loader'],
+          },'sass-loader' ,
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: path.resolve(__dirname, './static/style/base.scss')
+            }
+          },
+           'postcss-loader'],
         }
       ]
     },
