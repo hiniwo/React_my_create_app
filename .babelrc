@@ -3,7 +3,12 @@
         "corejs": 3,
         "useBuiltIns": "usage"
       }] , "@babel/preset-react"],
-    "plugins": ["@babel/plugin-transform-runtime" , "react-hot-loader/babel" ,  ["react-css-modules", {
-      "autoResolveMultipleImports" : true
+    "plugins": [
+      "@babel/plugin-transform-runtime" , 
+      "react-hot-loader/babel" ,
+      ["import", {
+      "libraryName": "antd",
+      "libraryDirectory": "es",
+      "style": "css" // `style: true` 会加载 less 文件
     }]]
 }
